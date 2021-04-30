@@ -1,4 +1,4 @@
-Blazor DynamicComponent - Demo
+# Blazor DynamicComponent - Demo
 
 Repositorio correspondiente al video de demo de DynamicComponent: https://youtu.be/bIqMxkFvalE
 
