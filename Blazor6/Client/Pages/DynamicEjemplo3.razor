@@ -1,0 +1,29 @@
+﻿@page "/dynamic/ejemplo-3"
+
+<h5>Ejemplo 3: Comunicación hijo a padre - Parámetros Cascada</h5>
+
+<CascadingValue Value="appState">
+	<DynamicComponent Type="typeof(BotonComponent)" />
+</CascadingValue>
+
+@code {
+	AppState appState = new AppState();
+	protected override void OnInitialized()
+	{
+		appState.Action = manejarClick;
+		appState.ActionConParameros = ManejarClickParametros;
+	}
+
+	private void manejarClick()
+	{
+		Console.WriteLine("Componente Padre: Manejar click");
+	}
+
+	private void ManejarClickParametros(Dictionary<string, object> diccionarioParam)
+	{
+		foreach (var llavesValores in diccionarioParam)
+		{
+			Console.WriteLine($"{llavesValores.Key}: {llavesValores.Value}");
+		}
+	}
+}

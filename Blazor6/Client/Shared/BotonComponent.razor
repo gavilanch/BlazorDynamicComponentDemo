@@ -1,0 +1,16 @@
+﻿<button @onclick="manejarClick">Clickeame</button>
+
+@code {
+	private void manejarClick()
+	{
+		appState.Action?.Invoke();
+
+		var diccionario = new Dictionary<string, object>() { 
+		{ "llave 1", "valor 1" }, 
+		{ "llave 2", "valor 2" } };
+		
+		appState.ActionConParameros?.Invoke(diccionario);
+	}
+
+	[CascadingParameter] public AppState appState { get; set; }
+}

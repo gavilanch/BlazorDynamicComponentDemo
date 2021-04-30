@@ -1,0 +1,10 @@
+﻿@page "/dynamic/ejemplo-1"
+
+<h5>Ejemplo 1: Simple uso</h5>
+
+<DynamicComponent Type="tipo" Parameters="diccionario" />
+
+@code {
+	Type tipo = typeof(SurveyPrompt);
+	IDictionary<string, object> diccionario = new Dictionary<string, object> { { "title", "mi titulo" } };
+}
